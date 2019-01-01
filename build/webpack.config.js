@@ -1,7 +1,4 @@
 const path = require("path");
-const vueLoaderConfig = require('./vue-loader.conf')
-
-console.log(path.resolve(__dirname,'../dist'))
 
 module.exports = {
     entry: path.resolve(__dirname,'../src/index.js'),
@@ -33,6 +30,14 @@ module.exports = {
                 'css-loader',
                 'less-loader'
                 ]
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+                loader: 'url-loader',
+                // options: {
+                //   limit: 10000,
+                //   name: utils.assetsPath('img/[name].[hash:7].[ext]')
+                // }
             }
         ]
     }
